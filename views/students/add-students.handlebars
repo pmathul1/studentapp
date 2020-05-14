@@ -1,0 +1,81 @@
+<section class="m-1">
+    <article class="card">
+        <header class=" m-5">
+            <h1 class="text-center">Add Student Details</h1>
+        </header>
+        {{#if errors}}
+            <div class="card-body d-flex d-flex flex-wrap  ">
+            {{#each errors}}
+                <div class="alert alert-danger text-center  mx-2  col-sm-12 ">{{text}}</div>
+            {{else}}
+            {{/each}}
+            
+        </div>
+        {{else}}
+        {{/if}}
+        
+        <main class="card-body">
+            <form action="/student/add-student" method="POST" enctype="multipart/form-data">
+                <div class="form-group row m-5">
+                    <div class="form-group col-md-6"><label class="font-weight-light" for="Id">Id</label>
+                    <input type="text" id="Id" class="form-control mt-1" name="student_id">
+                    </div>
+                   <div class="col-md-6"><label class="font-weight-light" for="name">Name</label>
+                    <input type="text" class="form-control mt-1"  id="name" name="student_name">
+                    </div>
+                    <div class="col-md-6"><label class="font-weight-light" for="dob">Date Of Birth</label>
+                    <input type="date" id="dob" class="form-control mt-1" name="student_dob">
+                    </div>
+                    <div class="col-md-6"><label class="font-weight-light" for="Location">Location</label>
+                    <input type="text" id="Location" class="form-control mt-1" name="student_location">
+                    </div>
+                    <div class="col-md-6"><label class="font-weight-light" for="Education">Education</label>
+                    <input type="text" id="Education" class="form-control mt-1" name="student_education">
+                    </div>
+                    <div class="col-md-6"><label class="font-weight-light" for="Email">Email</label>
+                    <input type="text" id="Email" class="form-control mt-1" name="student_email">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="student_skills">Skills</label><br>
+                        <div class="col-md-6 " class="form-check ">
+                            <input type="checkbox" id="java" class="form-check-input  px-3" id="Java" name="student_skills" value="Java">
+                            <label for="java" class="form-check-label pr-3"><i class="fab fa-java"></i>Java </label> 
+                            <input type="checkbox" id="python" class="form-check-input px-3" name="student_skills" value="python">
+                            <label for="python" class="form-check-label pr-3"><i class="fab fa-python"></i>python</label> 
+                            <input type="checkbox"  id="nodejs" class="form-check-input px-3 " name="student_skills" value="nodejs">
+                            <label for="nodejs" class="form-check-label pr-3"><i class="fab fa-node-js"></i>nodejs</label> 
+                            <input type="checkbox"  id="expressjs" class="form-check-input px-3" name="student_skills" value="expressjs">
+                            <label for="expressjs" class="form-check-label pr-3"><i class="fab fa-java"></i>expressjs</label> 
+                            <input type="checkbox" id="html" class="form-check-input px-3" name="student_skills" value="Html">
+                            <label for="html" class="form-check-label pr-3"><i class="fas fa-code"></i>Html</label> 
+                        </div>                        
+                    </div>
+    
+                    <div class="col-md-6"><label class="font-weight-light" for="Phone">Phone</label>
+                    <input type="text" id="Phone" class="form-control mt-1" name="student_phone">
+                    </div>
+                    
+                    <div class="col-md-6 form-radio ">
+                        <label for="gender">Gender</label><br>
+                        {{!-- <div class="col-md-6 " class="form-radio "> --}}
+                            <input type="radio"  class="form-radio-input px-3" id="male" name="student_gender" value="male">
+                            <label for="male" class="form-radio-label pr-3"></i>male </label> 
+                            <input type="radio"  class="form-radio-input px-3" id="female" name="student_gender" value="female">
+                            <label for="female" class="form-radio-label pr-3"></i>female</label> 
+                        {{!-- </div>  --}}
+                    </div>
+                    <div class="col-md-6"><label class="font-weight-light" for="Percentage">Percentage</label>
+                    <input type="text" id="Percentage" class="form-control mt-1" name="student_percentage">
+                    </div>
+                    <div class="col-md-6"><label class="font-weight-light" for="Photo">Upload Photo</label>
+                    <input type="file" id="Photo" class="form-control mt-1"  name="student_photo">
+                    </div>    
+                </div>
+                    <div class="text-center form-group ">
+                    <button type="submit" class="btn btn-success col-md-3 col-sm-6">submit</button>
+                    </div> 
+            </form>
+        </main>
+    </article> 
+</section>
